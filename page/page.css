@@ -26,7 +26,6 @@
 #bg__anim__pink {
   background: linear-gradient(316deg, #ec8eb7, #5b9dea);
   background-size: 400% 400%;
-
   animation: bg__anim__pink 6s ease infinite;
 }
 /**/
@@ -91,6 +90,7 @@
   min-height: 100vh;
   font-family: Ubuntu;
   font-weight: bold;
+  transition: 200ms;
 }
 .settings__container::-webkit-scrollbar {
   height: 5px;
@@ -196,9 +196,6 @@
   border-radius: 20px;
   backdrop-filter: blur(5px);
   transition: 0.4s;
-}
-.settings:hover {
-  background-color: rgba(255, 255, 255, 0.5);
 }
 .settings__active {
   width: 280px;
@@ -342,25 +339,25 @@
   display: flex; 
   right: calc(5vw + 140px); 
   bottom: 5vh; 
+  max-width: 580px;
   width: 60px; 
   height: 60px; 
   background-color: rgba(255, 255, 255, 0.3); 
   border-radius: 20px; 
   backdrop-filter: blur(5px); 
   transition: 0.4s;
+  justify-content: center;
   align-items: center; 
 } 
 .search__active { 
-  top: 0; 
-  right: 0; 
-  width: 100%;
-  border-radius: 0; 
+  width: 50%; 
 } 
 .search__button { 
   color: rgba(94, 94, 94, 0.645); 
   font-size: 0px; 
   transition: 0.2s; 
   cursor: pointer; 
+  margin-left: auto;
 }
 .search__button-active {
   font-size: 42px;
@@ -369,7 +366,8 @@
   color: rgba(94, 94, 94, 0.645); 
   font-size: 0px; 
   transition: 0.2s; 
-  cursor: pointer; 
+  cursor: pointer;
+  margin-right: 10px;
 }
 .search__close-active {
   font-size: 42px;
@@ -378,11 +376,14 @@
   width: 0;
   border: 0;
   outline: 0;
-  background-color: pink;
+  background-color: transparent;
   padding: 0;
+  font-size: 30px;
+
 }
 .search__input-active {
   width: 90%;
+  padding-left: 15px;
 }
 
 
@@ -532,10 +533,16 @@
   .create__icon {
     order: 1;
   }
+  .search__active { 
+    top: 0; 
+    right: 0; 
+    width: 100%;
+    border-radius: 0; 
+  } 
 }
-@media (max-height: 500px) {
+@media (max-height: 580px) {
   .settings {
-    top: 5vh;
+    top: calc(5vh + 140px);
   }
   .create {
     right: 5vw;
@@ -555,5 +562,9 @@
     top: 0;
     left: 0;
     border-radius: 0;
+  }
+  .search {
+    top: 5vh;
+    right: 5vw;
   }
 }

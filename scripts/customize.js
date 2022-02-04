@@ -23,30 +23,40 @@ document.getElementById("setting__icon").addEventListener("click", function () {
 });
 
 
+
+
 // это этвечает за адаптивность. Сделанно это через JS потому, что я лентяй и для кнопки редактировать не сделал собственный класс на откртие, а присваиваю такой-же как для настроек
 setInterval(function() {
-    if (settings != "close" && window.innerWidth > 645 && window.innerHeight > 500) {
+    if (settings != "close" && window.innerWidth > 645 && window.innerHeight > 580 && document.getElementById("create").classList.contains('settings__active') != true) {
         document.getElementById("create").style.right = "calc(5vw + 300px)";
-    } else if (settings != "close" && window.innerWidth <= 645 && window.innerWidth > 500 && window.innerHeight > 500) {
+        document.getElementById("search").setAttribute("style", "right: calc(5vw + 300px); bottom: calc(5vh + 80px);");
+    } else if (settings != "close" && window.innerWidth <= 645 && window.innerWidth > 500 && window.innerHeight > 580) {
         document.getElementById("create").style.right = "5vw";
+    } else if (document.getElementById("create").classList.contains('settings__active') != false && document.getElementById("settings").classList.contains('settings__active') != false && window.innerWidth > 645 && window.innerHeight > 580) {
+        document.getElementById("search").style.right = "5vw";
+        document.getElementById("search").style.bottom = "calc(5vh + 470px";
+    } else if (document.getElementById("create").classList.contains("settings__active") != false && window.innerWidth > 645 && window.innerHeight > 580) {
+        document.getElementById("search").style.right = "calc(5vw + 360px";
     } else {
         document.getElementById("create").style.right = "";
-    }
+        document.getElementById("search").setAttribute("style", "");
+    }   
 }, 200);
+
+
+
 
 //переключение темы
 let theme = "light";
 document.getElementById("theme-light").addEventListener("click", function () {
-    document.getElementById("theme-light").style.outline = "solid 2px rgba(94, 94, 94, 0.645)"
-    document.getElementById("theme-dark").style.outline = "0"
-    document.querySelector(".settings").style.backgroundColor="rgba(255, 255, 255, 0.3)";
-    document.querySelector(".todo").style.backgroundColor="rgba(255, 255, 255, 0.3)";
+    document.getElementById("theme-light").style.outline = "solid 2px rgba(94, 94, 94, 0.645)";
+    document.getElementById("theme-dark").style.outline = "0";
+    document.getElementById("themes").innerHTML = ".theme:hover {background-color: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px);}";
 });
 document.getElementById("theme-dark").addEventListener("click", function () {
-    document.getElementById("theme-dark").style.outline = "solid 2px rgba(94, 94, 94, 0.645)"
-    document.getElementById("theme-light").style.outline = "0"
-    document.querySelector(".settings").style.backgroundColor="rgb(0 0 0 / 60%)";
-    document.querySelector(".todo").style.backgroundColor="rgb(0 0 0 / 60%)";
+    document.getElementById("theme-dark").style.outline = "solid 2px rgba(94, 94, 94, 0.645)";
+    document.getElementById("theme-light").style.outline = "0";
+    document.getElementById("themes").innerHTML = ".theme {background-color: rgba(0, 0, 0, 0.6);} .theme:hover {background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px);}";
 });
 
 //Переключение фона
