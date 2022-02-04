@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body class="body bg__anim__pink" id="bg__anim__aqua">
+    <!-- настройки -->
+    <div class="settings theme" id="settings">
+      <ion-icon name="settings-outline" class="settings__icon" id="setting__icon"></ion-icon>
+      <div class="settings__container">
+        <h2 class="setting__title">Тема</h2>
+        <div class="theme__switch">
+          <div class="switch" id="theme-light">Light</div> <div class="switch" id="theme-dark">Dark</div>
+        </div>
+        <h2 class="setting__title">Задний фон</h2>
+        <div id="green-bg" class="background__checkbox"></div>
+        <div id="pink-bg" class="background__checkbox"></div>
+        <div id="sea-fire-bg" class="background__checkbox"></div>
+        <div id="aqua-bg" class="background__checkbox"></div>
+
+        <div id="city-bg" class="background__checkbox"></div>
+        <div id="wow-bg" class="background__checkbox"></div>
+        <div id="hils-bg" class="background__checkbox"></div>
+        <div id="pixel-bg" class="background__checkbox"></div>
+        <div id="cube-bg" class="background__checkbox"></div>
+        <div id="brain-bg" class="background__checkbox"></div>
+        <h2 class="setting__title">Язык</h2>
+        <div class="lang__swith">
+          <a href="#" class="lang lang-ru">Ru</a><a href="#" class="lang lang-en">En</a>
+        </div>
+        <div class="todo-all-del" id="todoAllDel">Удалить всё</div>
+      </div>
+    </div>
+    <!-- добавть заметку -->
+    
+    <div class="create theme" id="create">
+      <ion-icon name="create-outline" class="create__icon" id="create__icon"></ion-icon>
+      <div class="create__container">
+        <h2 class="setting__title">Заголовок</h2>
+          <input type="text" class="create__title" id="create__title">
+        <h2 class="setting__title">Текст</h2>
+          <textarea name="" id="create__text" cols="30" rows="10" class="create__text"></textarea>
+          <div class="create__done" id="create__done">Добавить</div>
+      </div>
+    </div>
+
+    <!-- Поиск --> 
+    <div class="search theme" id="search">
+      <input type="text" class="search__input" id="searchInput"> 
+      <ion-icon name="search-outline" class="searchbutton searchbutton-active" id="searchBut"></ion-icon> 
+      <ion-icon name="close-circle-outline" class="search__close" id="searchClose"></ion-icon> 
+    </div>
+
+    <!-- Грид -->
+    <div class="todo__grid" id="todo__grid">
+      <!-- тудушки -->
+
+
+      
+
+
+
+
+
+
+
+    </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="../scripts/customize.js"></script>
+  <script src="../scripts/todos.js"></script>
+  <script src="../scripts/search.js"></script>
+  </body>
+</html>

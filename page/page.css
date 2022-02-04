@@ -1,0 +1,559 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(http://example.com/fonts/ubuntu.woff) format('woff');
+}
+/*--- Фоны ---*/
+/*Зелено-темный анимированный фон*/
+@keyframes bg__anim__green {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+#bg__anim__green {
+  background: linear-gradient(341deg, #00f2b3, #000000);
+  background-size: 400% 400%;
+
+  animation: bg__anim__green 13s ease infinite;
+}
+/*розово-синий анимированный фон*/
+@keyframes bg__anim__pink {
+  0%{background-position:0% 97%}
+  50%{background-position:100% 4%}
+  100%{background-position:0% 97%}
+}
+#bg__anim__pink {
+  background: linear-gradient(316deg, #ec8eb7, #5b9dea);
+  background-size: 400% 400%;
+
+  animation: bg__anim__pink 6s ease infinite;
+}
+/**/
+#bg__anim__sea-fire {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: bg__anim__sea-fire 15s ease infinite;
+}
+@keyframes bg__anim__sea-fire {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+/*огненый анимированный фон*/
+@keyframes bg__anim__aqua {
+  0%{background-position:0% 25%}
+  50%{background-position:100% 76%}
+  100%{background-position:0% 25%}
+}
+#bg__anim__aqua {
+  background: linear-gradient(317deg, #25ecb9, #2567ec, #25d9ec);
+  background-size: 600% 600%;
+
+  animation: bg__anim__aqua 16s ease infinite;
+}
+#bg__gif__city {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://giffiles.alphacoders.com/130/13052.gif);
+}
+#bg__gif__wow {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://i.gifer.com/G4Ha.gif);
+}
+#bg__gif__hils {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://d324imu86q1bqn.cloudfront.net/uploads/asset/attachment/3368264/ello-optimized-29a8953d.gif);
+}
+#bg__gif__pixel {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://preview.redd.it/ejgf3cxzwlk51.gif?overlay-align=bottom,left&crop=1200:628.272251309,smart&overlay-height=15p&overlay=%2Fwatermark%2Ft5_2ql09.png%3Fs%3D312820cd8bc0a54e6624bbf444cb3cf0defec641&width=1200&height=628.272251309&s=3bb8f493a94c1090aee87b75396755fc3d257d3d);
+}
+#bg__gif__cube {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://i.yapx.ru/Mw843.gif);
+}
+#bg__gif__brain {
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://i.gifer.com/PwSB.gif);
+}
+
+
+
+/*--- Основные стили ---*/
+.body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: Ubuntu;
+  font-weight: bold;
+}
+.settings__container::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.settings__container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.settings__container::-webkit-scrollbar-thumb {
+  background-color: rgba(94, 94, 94, 0.5);
+  border-radius: 5px;
+}
+
+
+.todo__text::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.todo__text::-webkit-scrollbar-track {
+  background: transparent;
+}
+.todo__text::-webkit-scrollbar-thumb {
+  background-color: rgba(94, 94, 94, 0.5);
+  border-radius: 5px;
+}
+
+
+/*кнопка добавить*/
+.create__container::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.create__container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.create__container::-webkit-scrollbar-thumb {
+  background-color: rgba(94, 94, 94, 0.5);
+  border-radius: 5px;
+}
+.create {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: calc(5vw + 70px);
+  bottom: 5vh;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  transition: 0.4s;
+}
+.create__container {
+  width: 100%;
+  height: 0;
+  overflow-y: scroll;
+  transition: 0.2s;
+  opacity: 0;
+}
+.create__icon {
+  color: rgba(94, 94, 94, 0.645);
+  font-size: 42px;
+  margin: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.create__done {
+  cursor: pointer;
+  color: rgba(94, 94, 94, 0.645);
+}
+.create__title {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  border: 1px solid rgba(94, 94, 94, 0.645);
+}
+.create__text {
+  width: 90%;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  border: 1px solid rgba(94, 94, 94, 0.645);
+}
+
+/*Кнопка настроек*/
+.settings {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: 5vw;
+  bottom: 5vh;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  transition: 0.4s;
+}
+.settings:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.settings__active {
+  width: 280px;
+  /*
+  max-height: 600px;
+  height: 80%;
+  */
+  height: 450px;
+  z-index: 2;
+}
+.settings__container {
+  width: 100%;
+  height: 0;
+  overflow-y: scroll;
+  transition: 0.2s;
+  opacity: 0;
+}
+.setting__title {
+  margin: 15px auto;
+  font-size: 20px;
+  color: rgba(94, 94, 94, 0.645);
+  text-align: center;
+  border-bottom: gray solid 1px;
+  width: 80%;
+  margin-right: calc(auto - 5px);
+}
+.theme__switch {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.switch {
+  width: 45%;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 7px;
+  color: rgba(94, 94, 94, 0.645);
+  cursor: pointer;
+}
+#theme-light {
+  background-color: whitesmoke;
+}
+#theme-dark {
+  background-color: #222222;
+}
+.background__checkbox {
+  width: 80%;
+  height: 100px;  
+  border-radius: 20px;
+  margin-top: 30px;
+  margin: 10px auto;
+  outline: solid 2px transparent;
+  transition: 200ms;
+  cursor: pointer;
+}
+.background__checkbox:hover {
+  outline: solid 2px rgba(94, 94, 94, 0.645);
+}
+#green-bg {
+  background: linear-gradient(341deg, #00f2b3, #000000);
+}
+#pink-bg {
+  background: linear-gradient(316deg, #ec8eb7, #5b9dea);
+}
+#sea-fire-bg {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+#aqua-bg {
+  background: linear-gradient(317deg, #25ecb9, #2567ec, #25d9ec);
+}
+#city-bg {
+  background-image: url(https://giffiles.alphacoders.com/130/13052.gif);
+  background-position: center;
+}
+#wow-bg {
+  background-image: url(https://i.gifer.com/G4Ha.gif);
+  background-position: center;
+}
+#hils-bg {
+  background-image: url(https://d324imu86q1bqn.cloudfront.net/uploads/asset/attachment/3368264/ello-optimized-29a8953d.gif);
+  background-position: center;
+}
+#pixel-bg {
+  background-image: url(https://preview.redd.it/ejgf3cxzwlk51.gif?overlay-align=bottom,left&crop=1200:628.272251309,smart&overlay-height=15p&overlay=%2Fwatermark%2Ft5_2ql09.png%3Fs%3D312820cd8bc0a54e6624bbf444cb3cf0defec641&width=1200&height=628.272251309&s=3bb8f493a94c1090aee87b75396755fc3d257d3d);
+  background-position: center;
+}
+#cube-bg {
+  background-image: url(https://i.yapx.ru/Mw843.gif);
+  background-position: center;
+}
+#brain-bg {
+  background-image: url(https://i.gifer.com/PwSB.gif);
+  background-position: center;
+}
+
+.settings__icon {
+  color: rgba(94, 94, 94, 0.645);
+  font-size: 42px;
+  margin: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.settings__icon:hover {
+  transform: scale(1.1);
+}
+.lang__swith {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+.lang {
+  font-size: 32px;
+  color: rgba(94, 94, 94, 0.645);
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.lang:nth-of-type(1) {
+  text-decoration: underline;
+}
+.todo-all-del {
+  width: max-content;
+  background-color: rgba(255, 0, 0, 0.8);
+  padding: 7px 15px;
+  border-radius: 20px;
+  margin: auto;
+  text-align: center;
+  font-size: 22px;
+  color: rgba(94, 94, 94, 0.645);
+}
+
+
+/* поиск */ 
+.search { 
+  position: fixed; 
+  z-index: 1; 
+  display: flex; 
+  right: calc(5vw + 140px); 
+  bottom: 5vh; 
+  width: 60px; 
+  height: 60px; 
+  background-color: rgba(255, 255, 255, 0.3); 
+  border-radius: 20px; 
+  backdrop-filter: blur(5px); 
+  transition: 0.4s;
+  align-items: center; 
+} 
+.search__active { 
+  top: 0; 
+  right: 0; 
+  width: 100%;
+  border-radius: 0; 
+} 
+.search__button { 
+  color: rgba(94, 94, 94, 0.645); 
+  font-size: 0px; 
+  transition: 0.2s; 
+  cursor: pointer; 
+}
+.search__button-active {
+  font-size: 42px;
+}
+.search__close { 
+  color: rgba(94, 94, 94, 0.645); 
+  font-size: 0px; 
+  transition: 0.2s; 
+  cursor: pointer; 
+}
+.search__close-active {
+  font-size: 42px;
+} 
+.search__input {
+  width: 0;
+  border: 0;
+  outline: 0;
+  background-color: pink;
+  padding: 0;
+}
+.search__input-active {
+  width: 90%;
+}
+
+
+
+/*ToDo*/
+.todo-container {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* эдитор */
+.todo-container__edit {
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  max-width: 1024px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 30px;
+}
+.todo-container__edit-input {
+  background: none;
+  width: 75%;
+  outline: none;
+  border: 0;
+  font-size: 30px;
+  color: rgba(94, 94, 94, 0.645);
+}
+.todo-container__edit-done {
+  margin: 0;
+  color: rgba(94, 94, 94, 0.645);
+  font-size: 25px;
+  transition: 200ms;
+  cursor: pointer;
+}
+.todo-container__edit-done:hover {
+  color: rgba(0, 0, 0, 0.645);
+  transform: scale(1.1);
+}
+
+.todo-container__edit-done:active {
+  color: rgb(0, 255, 0);
+  transform: scale(1);
+}
+
+/* тудушки */
+.todo__grid {
+  display: grid;
+  grid-auto-rows: 150px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+
+
+.todo {
+  position: relative;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: .3s ease-in-out;
+}
+.todo__active {
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  font-size: 15px;
+  z-index: 2;
+  top: 25%;
+}
+.todo__tools {
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: ease-in-out 200ms 200ms;
+}
+.todo__tools-active {
+  height: 70px;
+}
+.todo__tools__icon {
+  font-size: 0;
+  color: rgb(117 117 117);
+}
+.todo__tools__icon-active {
+  font-size: 32px;
+  color: rgb(117 117 117);
+}
+.todo__title {
+  font-size: 24px;
+  color: rgb(117 117 117);
+  text-align: center;
+  margin: 0 ;
+}
+.todo__text {
+  overflow: auto;
+  box-sizing: border-box;
+  transition: 200ms;
+  font-size: 0px;
+  color: rgb(117 117 117);
+  margin: 0 ;
+}
+.todo__text-active {
+  font-size: 15px;
+  padding: 20px;
+}
+
+
+
+@media (max-width: 500px) {
+  .settings__active {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    z-index: 2;
+  }
+  .todo__active {
+    border-radius: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    font-size: 15px;
+    top: 0;
+  }
+  .settings__icon {
+    order: 1;
+  }
+  .create__icon {
+    order: 1;
+  }
+}
+@media (max-height: 500px) {
+  .settings {
+    top: 5vh;
+  }
+  .create {
+    right: 5vw;
+    top: calc(5vh + 70px);
+  }
+  .settings__active {
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+    z-index: 2;
+  }
+  .todo__active {
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+  }
+}

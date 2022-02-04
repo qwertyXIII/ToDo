@@ -1,0 +1,38 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+@keyframes loader-three__anim {
+  from {
+    height: 30px;
+  } to {
+    height: 50px;
+  }
+}
+
+.loader-three__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.loader-three__item {
+  width: 10px;
+  height: 30px;
+  background-color: gray;
+}
+
+.loader-three__item:nth-of-type(1) {
+  animation: loader-three__anim 850ms ease-in  0ms infinite alternate;
+}
+.loader-three__item:nth-of-type(2) {
+  animation: loader-three__anim 850ms ease-in  200ms infinite alternate;
+}
+.loader-three__item:nth-of-type(3) {
+  animation: loader-three__anim 850ms ease-in  400ms infinite alternate;
+}
